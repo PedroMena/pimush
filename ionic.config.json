@@ -1,0 +1,7 @@
+{
+  "name": "pimush",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
