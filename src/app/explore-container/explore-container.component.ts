@@ -18,6 +18,7 @@ constructor(private http: HttpClient) {}
 
 getPosts() {
   this.posts = this.http.get(this.ROOT_URL + '/');
+  this.posts = JSON.parse(this.posts)
 }
 
   ngOnInit() {}

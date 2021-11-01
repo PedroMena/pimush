@@ -1,4 +1,5 @@
-<ion-header [translucent]="true">
+<div ng-app="myApp" ng-controller="myCtrl">
+  <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
       Devices
@@ -10,11 +11,14 @@
   <br><br><br><br>
 
   <h1>Get Request</h1>
-  <button ion-button (click)="getPosts()">Default</button>
+  <!-- <button ion-button (click)="getPosts()">Default</button> -->
+  <button ion-button (click)="getDataFromAPI()">Default</button>
 
-  <div *ngFor="let post of posts | async">
+  <!-- <div *ngFor="let post of posts | async">
     {{console.log(post)}}
-  </div>
+  </div> -->
+
+  
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Tab 1</ion-title>
@@ -25,4 +29,4 @@
   
   </app-explore-container>
 </ion-content>
-
+</div>

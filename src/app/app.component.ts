@@ -11,14 +11,16 @@ import { catchError, retry } from 'rxjs/operators';
 export class AppComponent {
   // https://jsonplaceholder.typicode.com
   // http://10.0.0.22:3000
-  readonly ROOT_URL = 'https://jsonplaceholder.typicode.com';
+  readonly ROOT_URL = 'http://192.168.1.46:8080/';
   // variable named posts can take any type
-  posts: any;
+ // posts: any;
   constructor(private http: HttpClient) {}
-
-  getPosts() {
-    this.posts = this.http.get(this.ROOT_URL + '/');
+  getData():Observable<any> {
+    return this.http.get(this.ROOT_URL)
   }
+  // getPosts() {
+  //   this.posts = this.http.get(this.ROOT_URL + '/');
+  // }
 }
 
 // @Injectable()
