@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {AppComponent} from '../app.component'
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -13,13 +14,17 @@ export class Tab1Page {
 // http://192.168.1.46:8080/
 
   readonly ROOT_URL = 'http://192.168.1.46:8080/';
+  data:Array<any>
   // variable named posts can take any type
  // posts: any;
-  constructor(private http: AppComponent) {}
-
+  constructor(private http: AppComponent) {
+   this.data = new Array<any>();
+  }
   getDataFromAPI() {
     this.http.getData().subscribe((data) => {
-      console.log(data)
+      console.log(JSON.stringify(data))
+     // this.posts = data;
+      this.data = data;
     })
   }
   // getPosts(): Observable<any> {

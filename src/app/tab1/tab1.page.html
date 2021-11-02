@@ -10,13 +10,16 @@
 <ion-content [fullscreen]="true">
   <br><br><br><br>
 
-  <h1>Get Request</h1>
+  <h1>Get Request:</h1>
   <!-- <button ion-button (click)="getPosts()">Default</button> -->
-  <button ion-button (click)="getDataFromAPI()">Default</button>
 
-  <!-- <div *ngFor="let post of posts | async">
-    {{console.log(post)}}
-  </div> -->
+  <ion-button color="primary"
+  (click)="getDataFromAPI()">GET ROOT</ion-button>
+
+  <div *ngFor="let item of data | keyvalue">
+    Key: <b>{{item.key}}</b> and Value: <b>{{item.value}}</b>
+</div>
+
 
   
   <ion-header collapse="condense">
@@ -25,8 +28,6 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Devices: Demo">
-  
-  </app-explore-container>
+  <!-- <app-explore-container name="Devices: Demo"></app-explore-container> -->
 </ion-content>
 </div>
