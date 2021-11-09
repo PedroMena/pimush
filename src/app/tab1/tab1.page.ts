@@ -13,19 +13,31 @@ export class Tab1Page {
 // https://jsonplaceholder.typicode.com/
 // http://192.168.1.46:8080/
 
-  readonly ROOT_URL = 'http://192.168.1.46:8080/';
-  data:Array<any>
+// readonly ROOT_URL = 'http://192.168.199.1:8080/';
+readonly ROOT_URL = 'http://httpbin.org/post';
+
+data:Array<any>
+name: any
+result: any
+
   // variable named posts can take any type
  // posts: any;
   constructor(private http: AppComponent) {
    this.data = new Array<any>();
   }
+
   getDataFromAPI() {
     this.http.getData().subscribe((data) => {
       console.log(JSON.stringify(data))
      // this.posts = data;
       this.data = data;
     })
+  }
+  postDatatoAPI():Observable<string> {
+    this.result =  this.http.postData(this.name);
+    console.log(this.result);
+    return this.result;
+    
   }
   // getPosts(): Observable<any> {
   //   return this.http.get(this.ROOT_URL).subscribe(data => console.log(data));

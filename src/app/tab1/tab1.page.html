@@ -16,9 +16,12 @@
   <ion-button color="primary"
   (click)="getDataFromAPI()">GET ROOT</ion-button>
 
-  <div *ngFor="let item of data | keyvalue">
+<div *ngFor="let item of data | keyvalue">
     Key: <b>{{item.key}}</b> and Value: <b>{{item.value}}</b>
 </div>
+
+<input type="text" [(ngModel)]="name" placeholder="Name">
+<button (click)="postDatatoAPI()">Post Data</button>
 
 
   
